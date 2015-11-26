@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.baidu.mapapi.SDKInitializer;
+import com.baidu.mapapi.map.BaiduMap;
 import com.baidu.mapapi.map.MapView;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,6 +21,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mMapView = (MapView) findViewById(R.id.bmapView);
+        BaiduMap map = mMapView.getMap();
+        map.setTrafficEnabled(true);
+        map.setMyLocationEnabled(true);
     }
 
     @Override
